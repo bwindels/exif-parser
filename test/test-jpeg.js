@@ -37,7 +37,8 @@ module.exports = testCase({
 	},
 	"test getSectionName": function(test) {
 		test.deepEqual({name: 'SOI'}, jpeg.getSectionName(0xD8));
-		test.deepEqual({name: 'APP', index: 2}, jpeg.getSectionName(0xE2));
+		test.deepEqual({name: 'APP', index: 15}, jpeg.getSectionName(0xEF));
+		test.deepEqual({name: 'DHT'}, jpeg.getSectionName(0xC4));
 		test.done();
 	}
 });
