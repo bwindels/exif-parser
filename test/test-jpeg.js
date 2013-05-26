@@ -23,7 +23,7 @@ module.exports = testCase({
 		jpeg.parseSections(buf, function(type, offset, len) {
 			test.strictEqual(type, expectedSections[index].type);
 			test.strictEqual(offset, expectedSections[index].offset);
-			test.strictEqual(len, expectedSections[index].lens);
+			test.strictEqual(len, expectedSections[index].len);
 			++index;
 		});
 		test.strictEqual(index, expectedSections.length, 'all sections should be passed to the iterator');
@@ -33,6 +33,11 @@ module.exports = testCase({
 		var size = jpeg.getSizeFromSOFSection(buf, 3906);
 		test.strictEqual(size.width, 2);
 		test.strictEqual(size.height, 1);
+		test.done();
+	},
+	"test getSectionName": function(test) {
+		test.deepEqual({name: 'SOI'}, jpeg.getSectionName(0xD8));
+		test.deepEqual({name: 'APP', index: 2}, jpeg.getSectionName(0xE2));
 		test.done();
 	}
 });
