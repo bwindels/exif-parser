@@ -1,7 +1,7 @@
 var testCase = require('nodeunit').testCase;
 var exif = require('../lib/exif.js');
 var BufferStream = require('../lib/bufferstream.js');
-var buf = require('fs').readFileSync('/Users/bwindels/Downloads/Selectie%20Sylt/WP_20130509_004.jpg');
+var buf = require('fs').readFileSync(__dirname + '/starfish.jpg');
 
 module.exports = testCase({
 	"test parseTags": function(test) {
