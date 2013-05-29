@@ -1,12 +1,13 @@
 var testCase = require('nodeunit').testCase;
 var exif = require('../lib/exif.js');
+var BufferStream = require('../lib/bufferstream.js');
 var buf = require('fs').readFileSync('/Users/bwindels/Downloads/Selectie%20Sylt/WP_20130509_004.jpg');
 
 module.exports = testCase({
 	"test parseTags": function(test) {
 		var expectedTags = require('./expected-exif-tags.json');
 		var index = 0;
-		exif.parseTags(buf, 24, 23960, function(ifdSection, tagType, value, format) {
+		exif.parseTags(new BufferStream(buf, 24, 23960), function(ifdSection, tagType, value, format) {
 			var t = expectedTags[index];
 			test.strictEqual(t.ifdSection, ifdSection);
 			test.strictEqual(t.tagType, tagType);
