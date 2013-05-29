@@ -1,5 +1,6 @@
 var testCase = require('nodeunit').testCase;
 var jpeg = require('../lib/jpeg.js');
+var BufferStream = require('../lib/bufferstream.js');
 var buf = require('fs').readFileSync(__dirname + '/test.jpg');
 
 module.exports = testCase({
@@ -20,17 +21,18 @@ module.exports = testCase({
 			{ type: 218, offset: 4355, len: 0 }
 		];
 		var index = 0;
-		jpeg.parseSections(buf, function(type, offset, len) {
+		var jpegStream = new BufferStream(buf), start = jpegStream.mark();
+		jpeg.parseSections(jpegStream, function(type, sectionStream) {
 			test.strictEqual(type, expectedSections[index].type);
-			test.strictEqual(offset, expectedSections[index].offset);
-			test.strictEqual(len, expectedSections[index].len);
+			test.strictEqual(sectionStream.offsetFrom(start), expectedSections[index].offset);
+			test.strictEqual(sectionStream.remainingLength(), expectedSections[index].len);
 			++index;
 		});
 		test.strictEqual(index, expectedSections.length, 'all sections should be passed to the iterator');
 		test.done();	
 	},
 	"test getSizeFromSOFSection": function(test) {
-		var size = jpeg.getSizeFromSOFSection(buf, 3906);
+		var size = jpeg.getSizeFromSOFSection(new BufferStream(buf, 3906, 15, true));
 		test.strictEqual(size.width, 2);
 		test.strictEqual(size.height, 1);
 		test.done();
