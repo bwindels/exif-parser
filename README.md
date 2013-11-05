@@ -20,6 +20,8 @@ var result = parser.parse();
 
 Before calling parse, you can set a number of flags on the parser, telling it how to behave while parsing.
     
+Add fields in the binary format to result. Since these fields are mostly used for internal fields like Padding, you generally are not interested in these. If enabled, values for these fields will be a Buffer object in node or an ArrayBuffer in DOM environments (browsers).
+
     parser.enableBinaryFields([boolean]), default false;
 
 EXIF tags are organized into different sections, and to tell you the offset to other sections, EXIF uses certain tags. These tags don't tell you anything about the image, but are more for parsers to find out about all tags. Hence, these "pointer" fields are not included in the result tags field by default. Change this flag to include them nonetheless.
