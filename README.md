@@ -22,23 +22,24 @@ Before calling parse, you can set a number of flags on the parser, telling it ho
     
     parser.enableBinaryFields([boolean]), default false;
 
-Needs to be documented.
+EXIF tags are organized into different sections, and to tell you the offset to other sections, EXIF uses certain tags. These tags don't tell you anything about the image, but are more for parsers to find out about all tags. Hence, these "pointer" fields are not included in the result tags field by default. Change this flag to include them nonetheless.
 
     parser.enablePointers([boolean]), default false;
 
-Needs to be documented.
+Resolve tags to their textual name, making result.tags a dictonary object instead of an array with the tag objects with no textual tag name.
 
     parser.enableTagNames([boolean]), default true;
 
-Needs to be documented.
+Read the image size while parsing.
 
     parser.enableImageSize([boolean]), default true;
 
-Needs to be documented.
+Read the EXIF tags. Could be useful to disable if you only want to read the image size.
 
     parser.enableReturnTags([boolean]), default true;
 
-Needs to be documented.
+EXIF values can be represented in a number of formats (fractions, degrees, arrays, ...) with different precision.
+Enabling this tries to cast values as much as possible to the appropriate javascript types like number, Date.
 
     parser.enableSimpleValues([boolean]), default true;
 
