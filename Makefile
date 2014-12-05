@@ -9,7 +9,7 @@ build-browser-bundle: setup
 	@mkdir -p dist/
 	@$(BROWSERIFY) --bare browser-global.js -o $(BUNDLE)
 	@echo "building $(MIN_BUNDLE) ..."
-	$(UGLIFY) $(BUNDLE) -o $(MIN_BUNDLE) --compress
+	@$(UGLIFY) $(BUNDLE) -o $(MIN_BUNDLE) --compress
 setup:
 	@npm install --no-optional --loglevel error --development
 clean:
