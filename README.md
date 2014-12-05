@@ -6,6 +6,14 @@ exif-parser is a parser for image metadata in the exif format, the most popular 
 
     npm install exif-parser
 
+You can also build a browser bundle to include it with a `<script>` tag in a HTML document, like this:
+
+	make browser-global-bundle
+
+This will generate a `dist/exif-parser-(version).js` and `dist/exif-parser-(version)-min.js` file. These bundles expose the parser on the `ExifParser` global variable, which you would use like this:
+
+	var parser = window.ExifParser.create(arrayBuffer);
+
 ###Creating a parser
 To start parsing exif data, create a new parser like below. Note that the buffer you pass does not have to be the buffer for the full jpeg file. The exif section of a jpeg file has a maximum size of 65535 bytes and the section seems to always occur within the first 100 bytes of the file. So it is safe to only fetch the first 65635 bytes of a jpeg file and pass those to the parser.
 
@@ -19,7 +27,7 @@ var result = parser.parse();
 ###Setting the flags
 
 Before calling parse, you can set a number of flags on the parser, telling it how to behave while parsing.
-    
+
 Add fields in the binary format to result. Since these fields are mostly used for internal fields like Padding, you generally are not interested in these. If enabled, values for these fields will be a Buffer object in node or an ArrayBuffer in DOM environments (browsers).
 
     parser.enableBinaryFields([boolean]), default false;
