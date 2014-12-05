@@ -8,7 +8,9 @@ exif-parser is a parser for image metadata in the exif format, the most popular 
 
 You can also build a browser bundle to include it with a `<script>` tag in a HTML document, like this:
 
-	make browser-global-bundle
+	git clone git@github.com:bwindels/exif-parser.git
+	cd exif-parser/
+	make build-browser-bundle
 
 This will generate a `dist/exif-parser-(version).js` and `dist/exif-parser-(version)-min.js` file. These bundles expose the parser on the `ExifParser` global variable, which you would use like this:
 
