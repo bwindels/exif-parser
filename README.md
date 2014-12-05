@@ -12,6 +12,8 @@ You can also build a browser bundle to include it with a `<script>` tag in a HTM
 	cd exif-parser/
 	make build-browser-bundle
 
+Built versions of the bundles are also available in the [exif-parser-browser-bundles repo](https://github.com/bwindels/exif-parser-browser-bundles).
+
 This will generate a `dist/exif-parser-(version).js` and `dist/exif-parser-(version)-min.js` file. These bundles expose the parser on the `ExifParser` global variable, which you would use like this:
 
 	var parser = window.ExifParser.create(arrayBuffer);
