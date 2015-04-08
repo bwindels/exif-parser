@@ -72,3 +72,7 @@ You can check if there is a thumbnail present in the exif data with ```result.ha
 You can also get the image size of the thumbnail as an object with width and height properties: ```result.getThumbnailSize()```.
 
 To get the node buffer or arraybuffer containing just the thumbnail, call ```result.getThumbnailBuffer()```
+
+# Contributions
+
+I welcome external contributions through pull requests. If you do so, please try to refrain from using regular expressions. I have a particular distaste for them.
