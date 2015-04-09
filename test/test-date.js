@@ -51,5 +51,10 @@ module.exports = {
 		var timestamp = date.parseDateWithTimezoneFormat(dateStr);
 		test.strictEqual(timestamp, undefined);
 		test.done();
+	},
+	'test parseExifDate': function(test) {
+		test.strictEqual(date.parseExifDate('1970:01:01 00:00:00'), 0);
+		test.strictEqual(date.parseExifDate('1970-01-01T00:00:00-01:00'), 3600);
+		test.done();
 	}
 }
