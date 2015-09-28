@@ -73,6 +73,11 @@ You can also get the image size of the thumbnail as an object with width and hei
 
 To get the node buffer or arraybuffer containing just the thumbnail, call ```result.getThumbnailBuffer()```
 
+# Running the unit tests
+
+Install `nodeunit` globally from npm if you haven't done so already.
+You can run the tests with `nodeunit test/test-*.js`.
+
 # Contributions
 
-I welcome external contributions through pull requests. If you do so, please try to refrain from using regular expressions. I have a particular distaste for them.
+I welcome external contributions through pull requests. If you do so, please try to refrain from using regular expressions. I have a particular distaste for them. Also, when fixing a bug please provide a regression unit test if it makes sense.
