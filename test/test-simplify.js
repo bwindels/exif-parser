@@ -15,7 +15,7 @@ module.exports = {
 			setValues[tag.name] = value;
 		}
 		simplify.castDateValues(getTagValue, setTagValue);
-		test.strictEqual(Object.keys(setValues).length, 2);
+		test.strictEqual(Object.keys(setValues).length, 3);
 		test.strictEqual(setValues.DateTimeOriginal, 0);
 		test.strictEqual(setValues.CreateDate, 5 * 3600);
 		test.strictEqual(setValues.ModifyDate, 5 * 3600);
