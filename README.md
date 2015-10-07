@@ -80,4 +80,4 @@ You can run the tests with `nodeunit test/test-*.js`.
 
 # Contributions
 
-I welcome external contributions through pull requests. If you do so, please try to refrain from using regular expressions. I have a particular distaste for them. Also, when fixing a bug please provide a regression unit test if it makes sense.
+I welcome external contributions through pull requests. If you do so, please don't use regular expressions. I don't like them, and don't want to maintain a project where they are used. Also, when fixing a bug please provide a regression unit test if it makes sense.
