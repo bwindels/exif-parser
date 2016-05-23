@@ -11,12 +11,17 @@
     "tiff",
     "gps"
   ],
+  "scripts": {
+    "test": "nodeunit"
+  },
+  "engine": ">=0.10",
   "repository": {
     "type": "git",
     "url": "http://github.com/bwindels/exif-parser.git"
   },
   "devDependencies": {
     "browserify": "^7.0.0",
+    "nodeunit": "^0.9.1",
     "uglify-js": "^2.4.15"
   }
 }
