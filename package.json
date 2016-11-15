@@ -11,6 +11,7 @@
     "tiff",
     "gps"
   ],
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "http://github.com/bwindels/exif-parser.git"
