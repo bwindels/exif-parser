@@ -1,3 +1,3 @@
 var api = require('./index');
-var global = (function () { return this; }());
+var global = (1,eval)('this');
 global.ExifParser = api;
