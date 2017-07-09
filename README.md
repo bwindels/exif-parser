@@ -65,7 +65,7 @@ the tags that were found while parsing are stored in ```result.tags``` unless yo
 #### Getting the image size
 If ```parser.enableImageSize``` is set to true, ```result.getImageSize()``` will give you the image size as an object with width and height properties.
 
-####Getting the thumbnail
+#### Getting the thumbnail
 
 You can check if there is a thumbnail present in the exif data with ```result.hasThumbnail()```. Exif supports thumbnails is jpeg and tiff format, though most are in jpeg format. You can check if there is a thumbnail present in a give format by passing the mime type: ```result.hasThumbnail("image/jpeg")```.
 
