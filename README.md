@@ -1,31 +1,33 @@
-exif-parser
+ts-exif-parser
 ========
+[![npm version](https://badge.fury.io/js/ts-exif-parser.svg)](https://badge.fury.io/js/ts-exif-parser)
+[![Build Status](https://travis-ci.org/bpatrik/ts-exif-parser.svg?branch=master)](https://travis-ci.org/bpatrik/ts-exif-parser)
+
+This module is based on the exif-parser: https://github.com/bwindels/exif-parser
+ 
+
+----------------
 exif-parser is a parser for image metadata in the exif format, the most popular metadata format for jpeg and tiff images. It is written in pure javascript and has no external dependencies. It can also get the size of jpeg images and the size of the jpeg thumbnail embedded in the exif data. It can also extract the embedded thumbnail image.
 
 ### Installing
 
-    npm install exif-parser
+    npm install ts-exif-parser
 
 You can also build a browser bundle to include it with a `<script>` tag in a HTML document, like this:
 
-	git clone git@github.com:bwindels/exif-parser.git
+	git clone git@github.com:bpatrik/ts-exif-parser.git
 	cd exif-parser/
 	make build-browser-bundle
-
-Built versions of the bundles are also available in the [exif-parser-browser-bundles repo](https://github.com/bwindels/exif-parser-browser-bundles).
-
-This will generate a `dist/exif-parser-(version).js` and `dist/exif-parser-(version)-min.js` file. These bundles expose the parser on the `ExifParser` global variable, which you would use like this:
-
-	var parser = window.ExifParser.create(arrayBuffer);
-
+ 
 ### Creating a parser
 To start parsing exif data, create a new parser like below. Note that the buffer you pass does not have to be the buffer for the full jpeg file. The exif section of a jpeg file has a maximum size of 65535 bytes and the section seems to always occur within the first 100 bytes of the file. So it is safe to only fetch the first 65635 bytes of a jpeg file and pass those to the parser.
 
 The buffer you pass to create can be a node buffer or a DOM ArrayBuffer.
 
-```
-var parser = require('exif-parser').create(buffer);
-var result = parser.parse();
+```typescript
+import {ExifParserFactory} from "ts-exif-parser";
+const parser = ExifParserFactory.create(data);
+const Data = ExifParserFactory.create(data).parse();
 ```
 
 ### Setting the flags
@@ -75,9 +77,10 @@ To get the node buffer or arraybuffer containing just the thumbnail, call ```res
 
 # Running the unit tests
 
-Install `nodeunit` globally from npm if you haven't done so already.
-You can run the tests with `nodeunit test/test-*.js`.
+```typescript
+npm test
+```
 
 # Contributions
 
-I welcome external contributions through pull requests. If you do so, please don't use regular expressions. I don't like them, and don't want to maintain a project where they are used. Also, when fixing a bug please provide a regression unit test if it makes sense.
+I welcome external contributions through pull requests.

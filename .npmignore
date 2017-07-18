@@ -1,0 +1,4 @@
+/lib/**/*.ts
+index.ts
+.idea/
+test/

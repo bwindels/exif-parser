@@ -1,8 +1,8 @@
 {
-  "name": "exif-parser",
-  "version": "0.1.11",
+  "name": "ts-exif-parser",
+  "version": "0.1.2",
   "description": "A javascript library to extract Exif metadata from images, in node and in the browser.",
-  "author": "Bruno Windels <bruno.windels@gmail.com>",
+  "author": "Patik Braun, former: Bruno Windels <bruno.windels@gmail.com>",
   "keywords": [
     "exif",
     "image",
@@ -11,13 +11,24 @@
     "tiff",
     "gps"
   ],
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --recursive test"
+  },
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/bwindels/exif-parser.git"
+    "url": "http://github.com/bpatrik/ts-exif-parser.git"
   },
   "devDependencies": {
+    "@types/assert": "0.0.31",
+    "assert": "^1.4.1",
     "browserify": "^7.0.0",
-    "uglify-js": "^2.4.15"
+    "typescript": "^2.4.1",
+    "uglify-js": "^2.4.15",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.13",
+    "mocha": "latest",
+    "ts-node": "^3.2.0"
   }
 }
