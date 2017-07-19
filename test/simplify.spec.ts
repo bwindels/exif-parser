@@ -2,7 +2,7 @@ import {simplify} from "../lib/simplify";
 import * as assert from "assert";
 
 describe('simplify', () => {
-  it('test castDateValues', () => {
+  it('should castDateValues', () => {
     const values = {
       'DateTimeOriginal': '1970:01:01 00:00:00',
       'CreateDate': '1970-01-01T00:00:00-05:00',
