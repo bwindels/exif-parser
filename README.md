@@ -22,10 +22,15 @@ This will generate a `dist/exif-parser-(version).js` and `dist/exif-parser-(vers
 To start parsing exif data, create a new parser like below. Note that the buffer you pass does not have to be the buffer for the full jpeg file. The exif section of a jpeg file has a maximum size of 65535 bytes and the section seems to always occur within the first 100 bytes of the file. So it is safe to only fetch the first 65635 bytes of a jpeg file and pass those to the parser.
 
 The buffer you pass to create can be a node buffer or a DOM ArrayBuffer.
+Note that the `parse` method throws an Error when the data passed in is not valid JPEG data.
 
 ```
 var parser = require('exif-parser').create(buffer);
-var result = parser.parse();
+try {
+	var result = parser.parse();
+} catch(err) {
+	// got invalid data, handle error
+}
 ```
 
 ### Setting the flags
