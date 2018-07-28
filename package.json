@@ -1,7 +1,7 @@
 {
   "name": "ts-exif-parser",
-  "version": "0.1.23",
-  "description": "A javascript library to extract Exif metadata from images, in node and in the browser.",
+  "version": "0.1.24",
+  "description": "A typescript library to extract Exif metadata from images, in node and in the browser.",
   "author": "Patik Braun, former: Bruno Windels <bruno.windels@gmail.com>",
   "keywords": [
     "exif",
@@ -22,12 +22,12 @@
   },
   "devDependencies": {
     "@types/assert": "0.0.31",
-    "assert": "^1.4.1",
-    "typescript": "^2.4.1",
-    "uglify-js": "^2.4.15",
-    "@types/mocha": "^2.2.41",
-    "@types/node": "^8.0.13",
+    "assert": "1.4.1",
+    "typescript": "2.9.2",
+    "uglify-js": "3.4.6",
+    "@types/mocha": "5.2.5",
+    "@types/node": "10.5.4",
     "mocha": "latest",
-    "ts-node": "^3.2.0"
+    "ts-node": "7.0.0"
   }
 }
