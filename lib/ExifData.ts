@@ -1,5 +1,16 @@
 import {JpegParser} from "./JpegParser";
 
+export enum OrientationTypes {
+  TOP_LEFT = 1, //this is hte normal
+  TOP_RIGHT = 2,
+  BOTTOM_RIGHT = 3,
+  BOTTOM_LEFT = 4,
+  LEFT_TOP = 5,
+  RIGHT_TOP = 6,
+  RIGHT_BOTTOM = 7,
+  LEFT_BOTTOM = 8
+}
+
 export interface ExifTags {
   //TODO: fix types
   InteropIndex?: number;
@@ -21,7 +32,7 @@ export interface ExifTags {
   Make?: string;
   Model?: string;
   StripOffsets?: string;
-  Orientation?: string;
+  Orientation?: OrientationTypes;
   SamplesPerPixel?: string;
   RowsPerStrip?: string;
   StripByteCounts?: string;
@@ -456,7 +467,7 @@ export interface ImageSize {
 }
 
 export class ExifData {
-  constructor(public startMarker?:any,
+  constructor(public startMarker?: any,
               public tags?: ExifTags,
               public imageSize?: ImageSize,
               public thumbnailOffset?: number,

@@ -1,44 +1,44 @@
-import {ExifSections} from "./ExifSectionParser";
-import {DateUtil} from "./DateUtil";
-
-let degreeTags = [{
-  section: ExifSections.GPSIFD,
-  type: 0x0002,
-  name: 'GPSLatitude',
-  refType: 0x0001,
-  refName: 'GPSLatitudeRef',
-  posVal: 'N'
-},
-  {
-    section: ExifSections.GPSIFD,
-    type: 0x0004,
-    name: 'GPSLongitude',
-    refType: 0x0003,
-    refName: 'GPSLongitudeRef',
-    posVal: 'E'
-  }];
-let dateTags = [{
-  section: ExifSections.SubIFD,
-  type: 0x0132,
-  name: 'ModifyDate'
-},
-  {
-    section: ExifSections.SubIFD,
-    type: 0x9003,
-    name: 'DateTimeOriginal'
-  },
-  {
-    section: ExifSections.SubIFD,
-    type: 0x9004,
-    name: 'CreateDate'
-  },
-  {
-    section: ExifSections.SubIFD,
-    type: 0x0132,
-    name: 'ModifyDate',
-  }];
+import {ExifSections} from './ExifSectionParser';
+import {DateUtil} from './DateUtil';
 
 export module simplify {
+
+  const degreeTags = [{
+    section: ExifSections.GPSIFD,
+    type: 0x0002,
+    name: 'GPSLatitude',
+    refType: 0x0001,
+    refName: 'GPSLatitudeRef',
+    posVal: 'N'
+  },
+    {
+      section: ExifSections.GPSIFD,
+      type: 0x0004,
+      name: 'GPSLongitude',
+      refType: 0x0003,
+      refName: 'GPSLongitudeRef',
+      posVal: 'E'
+    }];
+  const dateTags: any[] = [{
+    section: ExifSections.SubIFD,
+    type: 0x0132,
+    name: 'ModifyDate'
+  },
+    {
+      section: ExifSections.SubIFD,
+      type: 0x9003,
+      name: 'DateTimeOriginal'
+    },
+    {
+      section: ExifSections.SubIFD,
+      type: 0x9004,
+      name: 'CreateDate'
+    },
+    {
+      section: ExifSections.SubIFD,
+      type: 0x0132,
+      name: 'ModifyDate',
+    }];
 
   export function castDegreeValues(getTagValue, setTagValue) {
     degreeTags.forEach(function (t) {

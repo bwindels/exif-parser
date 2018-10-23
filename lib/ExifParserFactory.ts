@@ -1,4 +1,4 @@
-import {ExifParser} from "./ExifParser";
+import {ExifParser} from './ExifParser';
 
 function getGlobal() {
   return (1, eval)('this');
