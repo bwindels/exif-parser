@@ -1,8 +1,5 @@
 var Parser = require('./lib/parser');
-
-function getGlobal() {
-	return (1,eval)('this');
-}
+var getGlobal = require('globalthis/polyfill');
 
 module.exports = {
 	create: function(buffer, global) {

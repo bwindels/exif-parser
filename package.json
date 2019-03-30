@@ -19,5 +19,8 @@
   "devDependencies": {
     "browserify": "^7.0.0",
     "uglify-js": "^2.4.15"
+  },
+  "dependencies": {
+    "globalthis": "^1.0.0"
   }
 }
