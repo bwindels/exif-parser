@@ -1,4 +1,4 @@
-import {JpegParser} from "./JpegParser";
+import {JpegParser} from './JpegParser';
 
 export enum OrientationTypes {
   TOP_LEFT = 1, //this is hte normal
@@ -476,7 +476,7 @@ export class ExifData {
               public app1Offset?: number) {
   }
 
-  hasThumbnail(mime) {
+  hasThumbnail(mime): boolean {
     if (!this.thumbnailOffset || !this.thumbnailLength) {
       return false;
     }
@@ -492,15 +492,15 @@ export class ExifData {
     return false;
   }
 
-  getThumbnailOffset() {
+  getThumbnailOffset(): number {
     return this.app1Offset + 6 + this.thumbnailOffset;
   }
 
-  getThumbnailLength() {
+  getThumbnailLength(): number  {
     return this.thumbnailLength;
   }
 
-  getThumbnailBuffer() {
+  getThumbnailBuffer(): ArrayBuffer  {
     return this.getThumbnailStream().nextBuffer(this.thumbnailLength);
   }
 

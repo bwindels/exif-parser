@@ -1,0 +1,50 @@
+{
+  "app1Offset": 24,
+  "startMarker": {
+    "offset": 0
+  },
+  "tags": {
+    "ApertureValue": 2.275007,
+    "Artist": "No creator",
+    "ColorSpace": 1,
+    "CreateDate": 1368199295,
+    "DateTimeOriginal": 1368199295,
+    "ExifImageHeight": 2000,
+    "ExifImageWidth": 3552,
+    "ExposureCompensation": 0,
+    "ExposureTime": 0.003139,
+    "FNumber": 2.2,
+    "Flash": 24,
+    "GPSAltitude": 10,
+    "GPSAltitudeRef": 1,
+    "GPSDOP": 0.125,
+    "GPSLatitude": 55.038756666666664,
+    "GPSLatitudeRef": "N",
+    "GPSLongitude": 8.45719,
+    "GPSLongitudeRef": "E",
+    "GPSMeasureMode": "3",
+    "GPSVersionID": [
+      2,
+      2,
+      0,
+      0
+    ],
+    "ISO": 100,
+    "ImageDescription": "Its a caption",
+    "InteropIndex": "R98",
+    "Make": "Nokia",
+    "Model": "Lumia 820",
+    "ModifyDate": 1368199295,
+    "OffsetSchema": 12,
+    "Orientation": 1,
+    "ResolutionUnit": 2,
+    "ShutterSpeedValue": 8.321928,
+    "Software": "Windows Phone",
+    "XResolution": 72,
+    "YCbCrPositioning": 1,
+    "YResolution": 72
+  },
+  "thumbnailLength": 18032,
+  "thumbnailOffset": 12210,
+  "thumbnailType": 6
+}
