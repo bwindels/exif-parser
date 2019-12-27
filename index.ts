@@ -1,2 +1,2 @@
-export {ExifParserFactory} from './lib/ExifParserFactory';
-export {OrientationTypes} from './lib/ExifData';
+export { ExifParserFactory } from "./lib/ExifParserFactory";
+export { OrientationTypes, ExifData } from "./lib/ExifData";
