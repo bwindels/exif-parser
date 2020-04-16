@@ -38,8 +38,8 @@ describe('JpegParser', () => {
     assert.strictEqual(size.height, 1);
   });
   it('getSectionName', () => {
-    assert.deepEqual({name: 'SOI'}, JpegParser.getSectionName(0xD8));
-    assert.deepEqual({name: 'APP', index: 15}, JpegParser.getSectionName(0xEF));
-    assert.deepEqual({name: 'DHT'}, JpegParser.getSectionName(0xC4));
+    assert.deepStrictEqual({name: 'SOI'}, JpegParser.getSectionName(0xD8));
+    assert.deepStrictEqual({name: 'APP', index: 15}, JpegParser.getSectionName(0xEF));
+    assert.deepStrictEqual({name: 'DHT'}, JpegParser.getSectionName(0xC4));
   });
 });
