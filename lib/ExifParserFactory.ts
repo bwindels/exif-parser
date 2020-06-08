@@ -12,7 +12,7 @@ export class ExifParserFactory {
       return new ExifParser(new DOMBufferStream(buffer, 0, buffer.byteLength, true, global));
     } else {
       const NodeBufferStream = require('./BufferStream').BufferStream;
-      return new ExifParser(new NodeBufferStream(buffer, 0, buffer.length, true));
+      return new ExifParser(new NodeBufferStream(buffer, 0, (<Buffer>buffer).length, true));
     }
   }
 }
