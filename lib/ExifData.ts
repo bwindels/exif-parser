@@ -50,7 +50,7 @@ export interface ExifTags {
   GrayResponseCurve?: string;
   T4Options?: string;
   T6Options?: string;
-  ResolutionUnit?: string;
+  ResolutionUnit?: number;
   PageNumber?: number;
   ColorResponseUnit?: string;
   TransferFunction?: string;
