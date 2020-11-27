@@ -1,3 +1,3 @@
 var api = require('./index');
-var global = (1,eval)('this');
+var global = require('globalthis/polyfill')();
 global.ExifParser = api;

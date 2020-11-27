@@ -1,8 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Use `globalThis` polyfill to get global object, as using `eval` was failing with strict CSP policies
+
 ## 0.1.11 - July 9th 2017
 
- - On nodejs, decode strings using UTF-8 instead of ASCII. Ideally we'd do this in the browser (UTF-16 currently) as well but that is a bit more work. 
+- On nodejs, decode strings using UTF-8 instead of ASCII. Ideally we'd do this in the browser (UTF-16 currently) as well but that is a bit more work.
 
 ## 0.1.10 - July 9th 2017
 
