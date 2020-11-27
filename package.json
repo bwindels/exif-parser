@@ -11,6 +11,7 @@
     "tiff",
     "gps"
   ],
+  "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
