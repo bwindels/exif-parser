@@ -3,6 +3,7 @@
   "version": "0.1.12",
   "description": "A javascript library to extract Exif metadata from images, in node and in the browser.",
   "author": "Bruno Windels <bruno.windels@gmail.com>",
+  "license": "MIT",
   "keywords": [
     "exif",
     "image",
